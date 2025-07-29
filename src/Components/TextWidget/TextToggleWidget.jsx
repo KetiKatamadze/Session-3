@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Wrapper from "../Counter/Wrapper";
-import Button from "../Counter/button.jsx";
+import Wrapper from "../Common/Wrapper.jsx";
+import Button from "../Common/Buttons.jsx";
+import "./textwidget.css";
 
 function TextToggleWidget() {
   const [text, setText] = useState("");
@@ -22,8 +23,8 @@ function TextToggleWidget() {
       />
       <Button color={"blue"} text={"დამალე"} click={close} />
       <Button color={"green"} text={"აჩვენე"} click={open} />
-
       {isVisible && <span className="text-area">{text}</span>}
+      <span>{text.length}</span>
     </Wrapper>
   );
 }

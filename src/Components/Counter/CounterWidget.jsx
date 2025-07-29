@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Button from "./button.jsx";
-import Wrapper from "./Wrapper";
+import Wrapper from "../Common/Wrapper.jsx";
+import Button from "../Common/Buttons.jsx";
+import "./counter.css";
 
 function CounterWidget() {
   const [count, setCount] = useState(0);
@@ -11,14 +12,14 @@ function CounterWidget() {
 
   const decrement = () => {
     setCount((current) => {
-        if (current > 0) {
-            return current - 1;
-        }
-        return current;
+      if (current > 0) {
+        return current - 1;
+      }
+      return current;
     });
-};
+  };
   const reset = () => {
-    setCount((current) => current = 0);
+    setCount((current) => (current = 0));
   };
 
   return (
@@ -28,7 +29,7 @@ function CounterWidget() {
       <Wrapper>
         <Button color="#4caf50" text="გაზრდა" click={increment} />
         <Button color="#ddbe33" text="შემცირება" click={decrement} />
-        <Button color="#c72d2d" text="თავიდან დაწყება"  click={reset}/>
+        <Button color="#c72d2d" text="თავიდან დაწყება" click={reset} />
       </Wrapper>
     </div>
   );

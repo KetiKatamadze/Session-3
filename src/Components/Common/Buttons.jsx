@@ -1,3 +1,5 @@
+import './button.css'
+
 function Button({color, text, click}) {
 
   return (
