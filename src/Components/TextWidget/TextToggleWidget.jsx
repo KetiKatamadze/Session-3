@@ -6,11 +6,13 @@ import "./textwidget.css";
 function TextToggleWidget() {
   const [text, setText] = useState("");
   const [isVisible, setIsVisible] = useState(true);
-  const close = () => {
-    setIsVisible(false);
-  };
-  const open = () => {
-    setIsVisible(true);
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  // const close = () => {
+  //   setIsVisible(false);
+  // };
+  // const open = () => {
+  //   setIsVisible(true);
   };
 
   return (
@@ -21,8 +23,7 @@ function TextToggleWidget() {
         value={text}
         onChange={(event) => setText(event.target.value)}
       />
-      <Button color={"blue"} text={"დამალე"} click={close} />
-      <Button color={"green"} text={"აჩვენე"} click={open} />
+      <Button color={"#4343d1"} click={toggleVisibility}> {isVisible ? "დამალე" : "მაჩვენე"} </Button>
       {isVisible && <span className="text-area">{text}</span>}
       <span>{text.length}</span>
     </Wrapper>
